@@ -7,11 +7,14 @@ import com.google.gson.annotations.SerializedName;
  */
 
 public class Aqi {
-    public AQICity aqiCity;
 
-    public class AQICity{
+    //这个类的名字可以随便取,但是初始化名字必须和gson数据的一致？
+    public City city;
 
+    public class City{
+        @SerializedName("aqi")
         public String aqi;
+        @SerializedName("pm25")
         public String pm25;
     }
 }
