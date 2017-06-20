@@ -148,7 +148,7 @@ public class ChooseAreaFragment extends Fragment{
     private void queryCounty(){
         titleText.setText(selectedCity.getCityName());
         backBtn.setVisibility(View.VISIBLE);
-        countyList=DataSupport.findAll(County.class);
+        countyList=DataSupport.where("cityid=?",String.valueOf(selectedCity.getId())).find(County.class);
         if (countyList.size()>0){
             dataList.clear();
             for (County county:countyList){
